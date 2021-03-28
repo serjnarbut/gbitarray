@@ -60,11 +60,11 @@ func BenchmarkSetBits(b *testing.B) {
 	}
 }
 
-func BenchmarkGetBits(b * testing.B) {
+func BenchmarkGetBits(b *testing.B) {
 	bits := NewBitArray(b.N)
 
 	for i := 0; i < b.N; i++ {
-		if i % 2 == 0  {
+		if i%2 == 0 {
 			bits.SetBit(i)
 		}
 	}
