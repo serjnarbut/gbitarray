@@ -22,6 +22,22 @@ func TestSetGetBits(t *testing.T) {
 	}
 }
 
+func TestDuplicateSetBit(t *testing.T) {
+	bits := NewBitArray(10)
+
+	bits.SetBit(4)
+
+	if !bits.HasBit(4) {
+		t.Error("Bit 4 must be set")
+	}
+
+	bits.SetBit(4)
+
+	if !bits.HasBit(4) {
+		t.Error("Bit 4 must be set")
+	}
+}
+
 func BenchmarkSetBits(b *testing.B) {
 	bits := NewBitArray(b.N)
 
